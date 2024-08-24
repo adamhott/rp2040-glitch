@@ -2,32 +2,45 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "preLaunchTask": "rust: cargo build",
             "type": "probe-rs-debug",
             "request": "launch",
             "name": "rp2040-glitch-target",
             "cwd": "${workspaceFolder}",
-            "chip": "rp2040",
-            "connectUnderReset": false,
-            "speed": 16000,
+            //!MODIFY (or remove)
+            "speed": 24000,
+            //!MODIFY (or remove)
+            "probe": "1209:4853:dc61cd078f743b33ef4014",
             "runtimeExecutable": "probe-rs",
             "runtimeArgs": [
                 "dap-server"
             ],
+            //!MODIFY
+            "chip": "rp2040",
             "flashingConfig": {
                 "flashingEnabled": true,
-                "haltAfterReset": false
+                "haltAfterReset": false,
+                "formatOptions": {
+                    //!MODIFY (or remove). Valid values are: 'bin', 'hex', 'elf'(default), 'idf'
+                    "binaryFormat": "elf"
+                }
             },
             "coreConfigs": [
                 {
                     "coreIndex": 0,
+                    //!MODIFY
                     "programBinary": "target/thumbv6m-none-eabi/debug/rp2040-glitch-target",
+                    //!MODIFY
                     "svdFile": "./svd/rp2040.svd",
                     "rttEnabled": true
                 }
             ],
-            "consoleLogLevel": "Info",
-            "wireProtocol": "Swd"
+            "env": {
+                //!MODIFY (or remove)
+                // If you set this variable, check the VSCode console log window for the location of the log file.
+                "RUST_LOG": "info"
+            },
+            // Info, Debug
+            "consoleLogLevel": "Console"
         }
     ]
 }

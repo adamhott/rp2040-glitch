@@ -5,9 +5,9 @@ speed = 20000
 # Otherwise: add your probe's VID/PID/serial to filter
 
 ## rust-dap
-usb_vid = "1209"
-usb_pid = "4853"
-serial = "dc61cd078f743b33ef4014"
+# usb_vid = "1209"
+# usb_pid = "4853"
+# serial = "dc61cd078f743b33ef4014"
 
 
 [default.flashing]
