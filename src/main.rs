@@ -14,7 +14,7 @@ use hal::{
     fugit::RateExtU32,
 };
 use panic_probe as _;
-use defmt_rtt as _;
+use rtt_target::{rprintln, rtt_init_print};
 
 const XOSC_CRYSTAL_FREQ: u32 = 12_000_000;
 
@@ -24,6 +24,9 @@ pub static BOOT_LOADER: [u8; 256] = rp2040_boot2::BOOT_LOADER_W25Q080;
 
 #[entry]
 fn main() -> ! {
+    // Initialize RTT early in the program
+    rtt_init_print!();
+    rprintln!("RTT Initialized");
 
     // Initialize the peripherals
     let pac = pac::Peripherals::take().unwrap();

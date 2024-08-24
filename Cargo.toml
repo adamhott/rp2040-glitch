@@ -9,9 +9,8 @@ cortex-m = "0.7"
 cortex-m-rt = "0.7"
 embedded-hal =  "1.0.0"
 
-defmt = "0.3"
-defmt-rtt = "0.4"
-panic-probe = { version = "0.3", features = ["print-defmt"] }
+rtt-target = "0.5.0"
+panic-probe  = "0.3"
 
 # We're using a Pico by default on this template
 rp-pico = "0.9.0"
