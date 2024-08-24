@@ -413,6 +413,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "rp2040-glitch-target"
+version = "0.1.0"
+dependencies = [
+ "cortex-m",
+ "cortex-m-rt",
+ "defmt",
+ "defmt-rtt",
+ "embedded-hal 1.0.0",
+ "panic-probe",
+ "rp-pico",
+ "rp2040-boot2",
+ "rp2040-hal",
+]
+
+[[package]]
 name = "rp2040-hal"
 version = "0.10.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -463,21 +478,6 @@ dependencies = [
  "cortex-m-rt",
  "critical-section",
  "vcell",
-]
-
-[[package]]
-name = "rp2040-target"
-version = "0.1.0"
-dependencies = [
- "cortex-m",
- "cortex-m-rt",
- "defmt",
- "defmt-rtt",
- "embedded-hal 1.0.0",
- "panic-probe",
- "rp-pico",
- "rp2040-boot2",
- "rp2040-hal",
 ]
 
 [[package]]
