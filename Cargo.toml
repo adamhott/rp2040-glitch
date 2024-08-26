@@ -8,8 +8,6 @@ license = "MIT OR Apache-2.0"
 cortex-m = "0.7"
 cortex-m-rt = "0.7"
 embedded-hal =  "1.0.0"
-
-rtt-target = "0.5.0"
 panic-probe  = "0.3"
 
 # We're using a Pico by default on this template
@@ -22,6 +20,9 @@ rp-pico = "0.9.0"
  rp2040-hal = { version="0.10.2", features=["rt", "critical-section-impl"] }
  rp2040-boot2 = "0.3"
 
+# For USB communication
+usb-device = "0.3.2"
+usbd-serial = "0.2.2"
 
 # cargo build/run
 [profile.dev]
